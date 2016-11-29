@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
+import { MaterialModule } from '@angular/material';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBTKeSmJ-EZT8gFtdQxTdvcw3kDv1xK4pc',
@@ -17,10 +18,11 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    AngularFireModule.initializeApp(firebaseConfig)
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    MaterialModule.forRoot(),
     FormsModule,
     HttpModule
   ],
