@@ -3,5 +3,9 @@
   <h4>Angular Firebase Chat</h4>
   <span class="toolbar-filler"></span>
   <button *ngIf="!auth" md-raised-button (click)="login()">LOGIN</button>
-
+  <ul *ngIf="auth" class="user-actions">
+    <img src="{{auth.avatar}}">
+    <span>{{auth.name}}</span>
+    <button md-raised-button (click)="logout()">LOGOUT</button>
+  </ul>
 </md-toolbar>

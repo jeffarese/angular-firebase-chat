@@ -1,5 +1,6 @@
 md-toolbar {
 	background-color: #e23237;
+	line-height: 64px;
 	h4 {
 		font-weight: normal;
 		color: white;
@@ -13,5 +14,22 @@ md-toolbar {
 	}
 	.toolbar-filler {
 		flex: 1 1 auto;
+	}
+	.user-actions {
+		img, span, button {
+			vertical-align: middle;
+		}
+		span, button {
+			margin-left: 5px;
+		}
+		span {
+			color: white;
+			font-size: 16px;
+		}
+		img {
+			border-radius: 50%;
+			width: 32px;
+			height: 32px;
+		}
 	}
 }
