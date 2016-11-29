@@ -16,6 +16,6 @@ export class MessageService {
 
   sendMessage(text: string, user: Auth) {
     let newMessage = new Message(user.avatar, user.name, text, new Date().getTime());
-    console.log(newMessage);
+    this.af.database.list('messages').push(newMessage);
   }
 }
