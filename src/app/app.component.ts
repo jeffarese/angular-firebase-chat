@@ -14,11 +14,19 @@ export class AppComponent {
 
   constructor(private authService: AuthService, private af: AngularFire) {
     this.af.auth.subscribe((data: any)=> {
-      this.auth = new Auth(data.uid, data.google.displayName, data.google.email, data.google.photoURL);
+      if (data) {
+        this.auth = new Auth(data.uid, data.google.displayName, data.google.email, data.google.photoURL);
+      } else {
+        this.auth = null;
+      }
     });
   }
 
   login() {
     this.authService.login();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }
