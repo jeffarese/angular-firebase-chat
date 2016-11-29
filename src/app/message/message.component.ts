@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from './message';
+import { Input } from '@angular/core/src/metadata/directives';
 
 @Component({
   selector: 'app-message',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
 
+  @Input() message: Message;
   constructor() { }
 
   ngOnInit() {

@@ -39,7 +39,6 @@ export class AppComponent {
       messages.map((message)=> {
         this.messages.push(new Message(message.avatar, message.displayName, message.text, message.date));
       });
-      console.log(this.messages);
     });
   }
 }

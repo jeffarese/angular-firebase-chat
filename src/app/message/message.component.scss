@@ -1,0 +1,32 @@
+:host {
+	padding: 5px;
+	display: inline-block;
+	float: left;
+	clear: both;
+	margin: 5px 0;
+	background-color: #fff;
+	border-radius: 5px;
+}
+:host.self {
+	float: right;
+	img, span	 {
+		float: right;
+	}
+	span {
+		margin-right: 10px;
+		margin-left: 0;
+	}
+}
+img, span {
+	display: block;
+	float: left;
+}
+span {
+	width: calc(100% - 42px);
+	margin-left: 10px;
+}
+img {
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+}

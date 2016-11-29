@@ -1,4 +1,19 @@
 export class Message {
-  constructor(private avatar: string, private displayName: string, private text: string, private date: number) {
+  get avatar(): string {
+    return this._avatar;
+  }
+
+  get displayName(): string {
+    return this._displayName;
+  }
+
+  get text(): string {
+    return this._text;
+  }
+
+  get date(): number {
+    return this._date;
+  }
+  constructor(private _avatar: string, private _displayName: string, private _text: string, private _date: number) {
   }
 }
