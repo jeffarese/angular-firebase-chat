@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { MaterialModule } from '@angular/material';
 import { AuthService } from './auth/auth.service';
-import { MessageService } from './messages/message.service';
+import { MessageComponent } from './message/message.component';
+import { MessageService } from './message/message.service';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyBTKeSmJ-EZT8gFtdQxTdvcw3kDv1xK4pc',
@@ -20,6 +21,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,
