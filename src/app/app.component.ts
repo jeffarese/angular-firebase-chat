@@ -41,4 +41,11 @@ export class AppComponent {
       });
     });
   }
+  
+  sendMessage(messageInput: HTMLInputElement) {
+    if (messageInput.value !== '') {
+      this.messageService.sendMessage(messageInput.value, this.auth);
+      messageInput.value = '';
+    }
+  }
 }

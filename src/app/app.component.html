@@ -20,7 +20,6 @@
     </app-message>
   </div>
   <div class="input-panel">
-    <md-input placeholder="Escribe tu mensaje"></md-input>
-    <button md-raised-button color="primary">ENVIAR</button>
+    <md-input placeholder="Escribe tu mensaje" (keyup.enter)="sendMessage(messageInput)" #messageInput></md-input>
   </div>
 </div>
