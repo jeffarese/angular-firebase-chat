@@ -18,11 +18,11 @@ export class AppComponent {
     this.af.auth.subscribe((data: any)=> {
       if (data) {
         this.auth = new Auth(data.uid, data.google.displayName, data.google.email, data.google.photoURL);
+        this.getMessages();
       } else {
         this.auth = null;
       }
     });
-    this.getMessages();
   }
 
   login() {
