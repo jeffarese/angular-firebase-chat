@@ -2,5 +2,6 @@
   <img class="logo" src="https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png">
   <h4>Angular Firebase Chat</h4>
   <span class="toolbar-filler"></span>
-  <button md-raised-button>LOGIN</button>
+  <button *ngIf="!auth" md-raised-button (click)="login()">LOGIN</button>
+
 </md-toolbar>
