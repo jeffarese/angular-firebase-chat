@@ -1,55 +1,46 @@
 @import '~@angular/material/core/theming/all-theme';
-// Plus imports for other components in your app.
-
-// Include the base styles for Angular Material core. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
 @include md-core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue.
 $md-ginger-palette: (
-        50: #ffffff,
-        100: #f9d7d8,
-        200: #f2a6a8,
-        300: #ea686b,
-        400: #e64d51,
-        500: #e23237,
-        600: #d71e24,
-        700: #bc1b1f,
-        800: #a1171b,
-        900: #871316,
-        A100: #ffffff,
-        A200: #f9d7d8,
-        A400: #e64d51,
-        A700: #bc1b1f,
-        contrast: (
-                50: rgba(black, 0.87),
-                100: rgba(black, 0.87),
-                200: rgba(black, 0.87),
-                300: white,
-                400: white,
-                500: rgba(white, 0.87),
-                600: rgba(white, 0.87),
-                700: rgba(white, 0.87),
-                800: rgba(white, 0.87),
-                900: rgba(white, 0.87),
-                A100: rgba(black, 0.87),
-                A200: white,
-                A400: white,
-                A700: rgba(white, 0.87),
-        ),
+		50: #ffffff,
+		100: #f9d7d8,
+		200: #f2a6a8,
+		300: #ea686b,
+		400: #e64d51,
+		500: #e23237,
+		600: #d71e24,
+		700: #bc1b1f,
+		800: #a1171b,
+		900: #871316,
+		A100: #ffffff,
+		A200: #f9d7d8,
+		A400: #e64d51,
+		A700: #bc1b1f,
+		contrast: (
+				50: rgba(black, 0.87),
+				100: rgba(black, 0.87),
+				200: rgba(black, 0.87),
+				300: white,
+				400: white,
+				500: rgba(white, 0.87),
+				600: rgba(white, 0.87),
+				700: rgba(white, 0.87),
+				800: rgba(white, 0.87),
+				900: rgba(white, 0.87),
+				A100: rgba(black, 0.87),
+				A200: white,
+				A400: white,
+				A700: rgba(white, 0.87),
+		),
 );
 $primary: md-palette($md-ginger-palette);
-$accent:  md-palette($md-pink, A200, A100, A400);
+$accent: md-palette($md-pink, A200, A100, A400);
 
-// The warn palette is optional (defaults to red).
-$warn:    md-palette($md-red);
+$warn: md-palette($md-red);
 
-// Create the theme object (a Sass map containing all of the palettes).
 $theme: md-light-theme($primary, $accent, $warn);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include angular-material-theme($theme);
+
+body {
+	margin: 0;
+}
