@@ -1,5 +1,4 @@
 export class Message {
-  constructor(private avatar: string, displayName: string, text: string, date: number) {
-
+  constructor(private avatar: string, private displayName: string, private text: string, private date: number) {
   }
 }

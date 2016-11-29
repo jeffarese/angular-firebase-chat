@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { AuthService } from './auth/auth.service';
-import { AngularFire } from 'angularfire2';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Auth } from './auth/auth';
+import { MessageService } from './message/message.service';
+import { Message } from './message/message';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +13,9 @@ import { Auth } from './auth/auth';
 export class AppComponent {
 
   private auth: Auth;
+  private messages: Message[] = [];
 
-  constructor(private authService: AuthService, private af: AngularFire) {
+  constructor(private authService: AuthService, private af: AngularFire, private messageService: MessageService) {
     this.af.auth.subscribe((data: any)=> {
       if (data) {
         this.auth = new Auth(data.uid, data.google.displayName, data.google.email, data.google.photoURL);
@@ -20,6 +23,7 @@ export class AppComponent {
         this.auth = null;
       }
     });
+    this.getMessages();
   }
 
   login() {
@@ -28,5 +32,14 @@ export class AppComponent {
 
   logout() {
     this.authService.logout();
+  }
+
+  getMessages() {
+    this.messageService.getMessages().subscribe((messages: FirebaseListObservable<any>) => {
+      messages.map((message)=> {
+        this.messages.push(new Message(message.avatar, message.displayName, message.text, message.date));
+      });
+      console.log(this.messages);
+    });
   }
 }

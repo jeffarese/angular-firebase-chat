@@ -14,7 +14,7 @@
   <h3>Bienvenid@ al chat de los Reyes Magos. Antes de que puedas enviarnos tu carta,
     te haremos unas preguntas para ver qué tal te has portado</h3>
   <div class="messages-panel">
-
+    <app-message *ngFor="let message of messages"></app-message>
   </div>
   <div class="input-panel">
     <md-input placeholder="Escribe tu mensaje"></md-input>
