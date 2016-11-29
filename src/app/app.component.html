@@ -13,13 +13,13 @@
 <div class="chat-panel">
   <h3>Bienvenid@ al chat de los Reyes Magos. Antes de que puedas enviarnos tu carta,
     te haremos unas preguntas para ver qué tal te has portado</h3>
-  <div class="messages-panel">
+  <div class="messages-panel" *ngIf="auth">
     <app-message [ngClass]="{'self': message.displayName == auth.name}"
                  *ngFor="let message of messages"
                  [message]="message">
     </app-message>
   </div>
-  <div class="input-panel">
+  <div class="input-panel" *ngIf="auth">
     <md-input placeholder="Escribe tu mensaje" (keyup.enter)="sendMessage(messageInput)" #messageInput></md-input>
   </div>
 </div>
