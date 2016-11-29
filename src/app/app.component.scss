@@ -35,11 +35,28 @@ md-toolbar {
 }
 
 .chat-panel {
+	position: relative;
 	padding: 32px;
 	height: calc(100vh - 64px - 60px);
-	width: 1200px;
+	width: 800px;
 	background-color: #eee;
 	margin: 30px auto 0 auto;
 	box-shadow: 0 1px 1px 0 rgba(0,0,0,.06),0 2px 5px 0 rgba(0,0,0,.2);
-
+	.input-panel {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		padding: 15px;
+		md-input, button {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		md-input {
+			width: 80%;
+		}
+		button {
+			margin-left: 30px;
+		}
+	}
 }
