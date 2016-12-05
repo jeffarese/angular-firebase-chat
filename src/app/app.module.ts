@@ -11,11 +11,11 @@ import { MessageComponent } from './message/message.component';
 import { MessageService } from './message/message.service';
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyBTKeSmJ-EZT8gFtdQxTdvcw3kDv1xK4pc',
-  authDomain: 'react-firebase-chat-74da6.firebaseapp.com',
-  databaseURL: 'https://react-firebase-chat-74da6.firebaseio.com',
-  storageBucket: 'react-firebase-chat-74da6.appspot.com',
-  messagingSenderId: '1005738784121'
+  apiKey: 'AIzaSyA_xccLhwGTSPFXJFj4O8YVh6ymz1RixjY',
+  authDomain: 'angular-firebase-chat-9f6b6.firebaseapp.com',
+  databaseURL: 'https://angular-firebase-chat-9f6b6.firebaseio.com',
+  storageBucket: 'angular-firebase-chat-9f6b6.appspot.com',
+  messagingSenderId: '6840919264'
 };
 
 @NgModule({
