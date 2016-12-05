@@ -17,7 +17,7 @@ export class AppComponent {
   constructor(private authService: AuthService, private af: AngularFire, private messageService: MessageService) {
     this.af.auth.subscribe((data: any)=> {
       if (data) {
-        this.auth = new Auth(data.uid, data.google.displayName, data.google.email, data.google.photoURL);
+        this.auth = new Auth(data.uid, data.auth.displayName, data.auth.email, data.auth.photoURL);
         this.getMessages();
       } else {
         this.auth = null;
