@@ -30,6 +30,7 @@ export class AppComponent {
 
   private auth: Auth;
   private messages: FirebaseListObservable<any>;
+  private messagesCount: number = 0;
 
   constructor(private authService: AuthService, private af: AngularFire, private messageService: MessageService) {
     this.af.auth.subscribe((data: any)=> {
@@ -61,6 +62,7 @@ export class AppComponent {
       this.messageService.sendMessage(messageInput.value, this.auth).subscribe(()=> {
         this.createBotMessage(messageInput.value.toLowerCase()).subscribe((data: any)=> {
           this.messageService.sendMessage(data.$value, BOT_USER);
+          this.messagesCount++;
         });
       });
       messageInput.value = '';
@@ -74,6 +76,11 @@ export class AppComponent {
         foundTrigger = trigger;
       }
     });
+    if (this.messagesCount === 0) {
+      foundTrigger = 'bienvenida';
+    } else if (this.messagesCount > 4) {
+      foundTrigger= 'despedida';
+    }
     return this.messageService.getBotMessage(foundTrigger);
   }
 }
