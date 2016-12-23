@@ -52,7 +52,7 @@ export class AppComponent {
   }
 
   getMessages() {
-    this.messageService.getMessages().subscribe((messages: FirebaseListObservable<any>) => {
+    this.messageService.getMessages(this.auth).subscribe((messages: FirebaseListObservable<any>) => {
       this.messages = messages;
     });
   }
@@ -61,7 +61,7 @@ export class AppComponent {
     if (messageInput.value !== '') {
       this.messageService.sendMessage(messageInput.value, this.auth).subscribe(()=> {
         this.createBotMessage(messageInput.value.toLowerCase()).subscribe((data: any)=> {
-          this.messageService.sendMessage(data.$value, BOT_USER);
+          this.messageService.sendMessage(data.$value, BOT_USER, this.auth);
           this.messagesCount++;
         });
       });

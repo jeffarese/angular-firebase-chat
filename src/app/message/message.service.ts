@@ -12,16 +12,20 @@ export class MessageService {
 
   }
 
-  getMessages(): FirebaseListObservable<any> {
-    return this.af.database.list('messages');
+  getMessages(user: Auth): FirebaseListObservable<any> {
+    return this.af.database.list(`${user.id}/messages`);
   }
 
-  sendMessage(text: string, user: Auth) {
+  sendMessage(text: string, user: Auth, auth?: Auth) {
     let newMessage = new Message(user.avatar, user.name, text, new Date().getTime());
-    return Observable.of(this.af.database.list('messages').push(newMessage));
+    if (auth) {
+      return Observable.of(this.af.database.list(`${auth.id}/messages`).push(newMessage));
+    }
+    return Observable.of(this.af.database.list(`${user.id}/messages`).push(newMessage));
   }
 
   getBotMessage(trigger: string): FirebaseObjectObservable<any> {
+    console.log('get bot');
     return this.af.database.object(`bot/${trigger}`);
   }
 }
