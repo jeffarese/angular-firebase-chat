@@ -11,8 +11,8 @@
 </md-toolbar>
 
 <div class="chat-panel">
-  <h3>Bienvenid@ al chat de los Reyes Magos. Antes de que puedas enviarnos tu carta,
-    te haremos unas preguntas para ver qué tal te has portado</h3>
+  <h3>Bienvenid@ al chat de los Reyes Magos. Antes de nada,
+    te haremos unas preguntas para ver qué tal te has portado. Inicia sesión para empezar.</h3>
   <div class="messages-panel" #messagesPanel [scrollTop]="messagesPanel.scrollHeight" *ngIf="auth">
     <app-message [ngClass]="{'self': message.displayName == auth.name}"
                  *ngFor="let message of messages"
